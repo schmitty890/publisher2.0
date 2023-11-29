@@ -1,11 +1,18 @@
 import environments from "./environments.js";
 import releases from "./releases.js";
-
+import { doSomething, doAnotherThing } from "./questions.js";
+const dataObj = {
+  test: "value",
+};
 // console.log(releases);
 const test = () => {
   return "jason";
 };
 console.log(test());
+
+var whichRelease = await doSomething(dataObj);
+console.log("whichRelease");
+console.log(whichRelease);
 
 // ask questions here to get data back to know what
 // what months environment do you want to update
