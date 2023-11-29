@@ -1,11 +1,11 @@
-// var expect = require("chai").expect;
 import mocha from "chai";
-// var mainConfig = require("../index");
-// var mainConfig = require("../index.js");
 import mainConfig from "../index.js";
 import environments from "../environments.js";
 
 // Repliweb environment test suite
+/**
+ * these names should match what is expected from our pre configured repliweb paths
+ */
 describe("Environment tests", function () {
   describe("Environment names", function () {
     it("SIT1 environment name", function () {
@@ -34,6 +34,11 @@ describe("Environment tests", function () {
 });
 
 // Release configuration test suite
+/**
+ * this example should match the environments configured for lower lane publishing.
+ * this is to ensure a double check that the project is configured to publish to the correct
+ * repliweb paths
+ */
 describe("CSS Releases tests", function () {
   describe("Release configurations", function () {
     it("Release configuration test", function () {

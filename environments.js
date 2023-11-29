@@ -1,3 +1,8 @@
+/**
+ * environments are the different repliweb environments the engineering team create overtime
+ * when a new environment is added, add it to this environments object to keep all the
+ * environment info in one place
+ */
 const environments = {
   title: "Environments for GWIM CSS publishing",
   description:
