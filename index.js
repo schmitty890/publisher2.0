@@ -1,22 +1,31 @@
-import environments from "./environments.js";
-import releases from "./releases.js";
-import { doSomething, doAnotherThing } from "./questions.js";
-const dataObj = {
-  test: "value",
-};
+import { askWhichRelease, doAnotherThing } from "./questions.js";
+import { aFuncFromPublisher } from "./publisher.js";
+
+// dataObj holds all the info the user enters via the prompts combined with configuration settings
+const dataObj = {};
 // console.log(releases);
 const test = () => {
   return "jason";
 };
 console.log(test());
 
-var whichRelease = await doSomething(dataObj);
-console.log("whichRelease");
-console.log(whichRelease);
-
 // ask questions here to get data back to know what
+
 // what months environment do you want to update
 // FEB_24 --> update feb 24 repliweb environments based off of the environment configuration for FEB_24
+var whichRelease = await askWhichRelease(dataObj);
+// console.log("whichRelease");
+// console.log(whichRelease);
+
+aFuncFromPublisher(whichRelease);
+
+// { releaseToPublish: 'MAR_24' }
+// now that we have which release to publish, we want to
+// pull the latest from the release branch that is targeted for the releaseToPublish value (ex: MAR_24)
+
+// build the files
+
+// copy the files from the source to the destination  'desktop/repos/css-cli/rwd' --> '//repliweb.addressYOURVARIABLENAMEREFERENCED'
 
 // create empty folders in certain repliweb environment
 // create placeholder folders ex: FEB_24 folders in each correct place
@@ -34,9 +43,3 @@ console.log(whichRelease);
 //   releaseBranch: "release/03.14.24",
 //   lowerLaneEnvironments: [environments.env.SIT1.url],
 // }
-
-export default {
-  test,
-  environments,
-  releases,
-};
