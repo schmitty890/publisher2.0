@@ -13,6 +13,13 @@ class publisher {
       releaseSchedule.release.find((element) => element.name === theRelease);
     console.log(releaseDetails(theRelease));
   }
+
+  publishLowerLaneEnvironment(release) {
+    const theRelease = release.releaseToPublish;
+    const releaseDetails = (theRelease) =>
+      releaseSchedule.release.find((element) => element.name === theRelease);
+    console.log(releaseDetails(theRelease));
+  }
 }
 
-export const { aFuncFromPublisher } = new publisher();
+export const { publishLowerLaneEnvironment } = new publisher();

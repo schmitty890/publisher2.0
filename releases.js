@@ -9,7 +9,7 @@ const releases = {
       date: "03.14.24",
       releaseBranch: "release/03.14.24",
       lowerLaneEnvironments: [environments.env.SIT1.url],
-      show: true,
+      show: false,
     },
     {
       name: "FEB_24",

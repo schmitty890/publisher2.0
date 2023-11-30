@@ -7,14 +7,13 @@ class questions {
    * @return {Object} release ex: { releaseToPublish: 'FEB_24' }
    */
   async askWhichRelease(dataObj) {
-    // some stuffs
-    console.log("doSomething");
-
     const releaseNames = [];
     releaseSchedule.release.forEach((release) => {
-      releaseNames.push(release.name);
+      if (release.show) {
+        releaseNames.push(release.name);
+      }
     });
-    console.log(releaseNames);
+    // console.log(releaseNames);
     const getRelease = await inquirer.prompt([
       {
         type: "list",
@@ -24,7 +23,7 @@ class questions {
       },
     ]);
     dataObj = { ...dataObj, ...getRelease };
-    console.log(typeof dataObj);
+    // console.log(typeof dataObj);
     return dataObj;
   }
 

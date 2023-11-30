@@ -1,23 +1,16 @@
 import { askWhichRelease, doAnotherThing } from "./questions.js";
-import { aFuncFromPublisher } from "./publisher.js";
+import { publishLowerLaneEnvironment } from "./publisher.js";
 
 // dataObj holds all the info the user enters via the prompts combined with configuration settings
 const dataObj = {};
-// console.log(releases);
-const test = () => {
-  return "jason";
-};
-console.log(test());
 
 // ask questions here to get data back to know what
 
 // what months environment do you want to update
 // FEB_24 --> update feb 24 repliweb environments based off of the environment configuration for FEB_24
 var whichRelease = await askWhichRelease(dataObj);
-// console.log("whichRelease");
-// console.log(whichRelease);
 
-aFuncFromPublisher(whichRelease);
+publishLowerLaneEnvironment(whichRelease);
 
 // { releaseToPublish: 'MAR_24' }
 // now that we have which release to publish, we want to
