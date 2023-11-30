@@ -1,4 +1,4 @@
-import { askWhichRelease, doAnotherThing } from "./questions.js";
+import { askWhichRelease, askWhichRepo, doAnotherThing } from "./questions.js";
 import { publishLowerLaneEnvironment } from "./publisher.js";
 
 // dataObj holds all the info the user enters via the prompts combined with configuration settings
@@ -8,9 +8,15 @@ const dataObj = {};
 
 // what months environment do you want to update
 // FEB_24 --> update feb 24 repliweb environments based off of the environment configuration for FEB_24
-var whichRelease = await askWhichRelease(dataObj);
+dataObj.release = await askWhichRelease();
 
-publishLowerLaneEnvironment(whichRelease);
+dataObj.repos = await askWhichRepo();
+
+console.log("our data object to use here");
+console.log(dataObj);
+console.log("end our data object to use here");
+
+// publishLowerLaneEnvironment(whichRelease);
 
 // { releaseToPublish: 'MAR_24' }
 // now that we have which release to publish, we want to

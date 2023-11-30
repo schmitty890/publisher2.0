@@ -8,6 +8,6 @@ import { askWhichRelease, doAnotherThing } from "../questions.js";
 describe("Question tests", function () {
   it("Get release test", async function () {
     const res = await askWhichRelease();
-    mocha.expect(res).to.eql({ releaseToPublish: "DEC_23" });
+    mocha.expect(res).to.eql("DEC_23");
   });
 });

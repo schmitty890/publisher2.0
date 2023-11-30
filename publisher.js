@@ -14,11 +14,14 @@ class publisher {
     console.log(releaseDetails(theRelease));
   }
 
+  /**
+   * get the details of the release the user picked
+   */
   publishLowerLaneEnvironment(release) {
     const theRelease = release.releaseToPublish;
     const releaseDetails = (theRelease) =>
       releaseSchedule.release.find((element) => element.name === theRelease);
-    console.log(releaseDetails(theRelease));
+    // console.log(releaseDetails(theRelease));
   }
 }
 
