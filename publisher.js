@@ -87,16 +87,20 @@ class publisher {
 
   publishFiles = (releaseDetails, isDevelopment) => {
     console.log(`npm run build`);
-
+    // console.log(releaseDetails);
     // execute gulp command to build out files - command from npm package
     // let buildingFiles = child_process.execSync("npm run build");
 
-    this.copyFilesToDestination(isDevelopment);
+    this.copyFilesToDestination(releaseDetails, isDevelopment);
   };
 
-  copyFilesToDestination = (isDevelopment) => {
+  copyFilesToDestination = (releaseDetails, isDevelopment) => {
     // const env = setDevOrProdDestinationSource(isDevelopment, repoDetails);
     console.log(`publish files to destination`);
+    console.log(releaseDetails);
+    releaseDetails.lowerLaneEnvironments.forEach((env) => {
+      console.log(`publishing to: ${env}`);
+    });
     // try {
 
     // }catch(err) {

@@ -14,8 +14,11 @@ const releases = {
     {
       name: "FEB_24",
       date: "02.12.24",
-      releaseBranch: "release/04.12.24",
-      lowerLaneEnvironments: [environments.env.SIT2.url],
+      releaseBranch: "release/02.12.24",
+      lowerLaneEnvironments: [
+        environments.env.SIT2.url,
+        environments.env.DIFF.url,
+      ],
       show: true,
     },
     {

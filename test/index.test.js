@@ -53,7 +53,7 @@ describe("CSS Releases tests", function () {
         {
           name: "FEB_24",
           date: "02.12.24",
-          releaseBranch: "release/04.12.24",
+          releaseBranch: "release/02.12.24",
           lowerLaneEnvironments: [environments.env.SIT2.url],
           show: true,
         },

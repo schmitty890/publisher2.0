@@ -16,6 +16,10 @@ const environments = {
       name: "SIT2/PL2",
       url: "sit2.com",
     },
+    DIFF: {
+      name: "DIFF",
+      url: "diff.com",
+    },
   },
 };
 

@@ -6,7 +6,7 @@ import { askWhichRelease, doAnotherThing } from "../questions.js";
  * make sure questions get expected results
  */
 describe("Question tests", function () {
-  it("Get release test", async function () {
+  it("Ask which release test", async function () {
     const res = await askWhichRelease();
     mocha.expect(res).to.eql("DEC_23");
   });
