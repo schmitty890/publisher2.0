@@ -1,8 +1,10 @@
 import { askWhichRelease, askWhichRepo, doAnotherThing } from "./questions.js";
-import { publishLowerLaneEnvironment } from "./publisher.js";
+import { publishLowerLaneEnvironment, buildFiles } from "./publisher.js";
 
 // dataObj holds all the info the user enters via the prompts combined with configuration settings
-const dataObj = {};
+const dataObj = {
+  DEVELOPMENT: true,
+};
 
 // ask questions here to get data back to know what
 
@@ -13,8 +15,15 @@ dataObj.release = await askWhichRelease();
 dataObj.repos = await askWhichRepo();
 
 console.log("our data object to use here");
-console.log(dataObj);
+console.log(dataObj); // { release: 'DEC_23', repos: [ 'mgi', 'non_rwd' ] }
 console.log("end our data object to use here");
+console.log(
+  `you want to publish ${dataObj.release} to ${dataObj.repos.toString()}`
+);
+
+dataObj.filesBuilt = await buildFiles(dataObj);
+
+// console.log(dataObj);
 
 // publishLowerLaneEnvironment(whichRelease);
 
